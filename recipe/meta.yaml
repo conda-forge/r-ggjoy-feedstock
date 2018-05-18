@@ -1,4 +1,4 @@
-{% set version = '0.4.0' %}
+{% set version = "0.4.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ggjoy_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ggjoy/ggjoy_{{ version }}.tar.gz
-  sha256: cb9ef790921ffcd3cfb6a55b409d17ccae9e8f5fdd2a28e55ea2ccfa8efd44e8
+  sha256: d2f778bc40203d7fbb7c81b40beed8614c36ea10448e911663cc6109aa685504
 
 build:
   number: 0
