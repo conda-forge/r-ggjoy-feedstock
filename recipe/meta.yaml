@@ -1,5 +1,4 @@
-{% set version = "0.4.1" %}
-
+{% set version = '0.4.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: ggjoy_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ggjoy_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ggjoy/ggjoy_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/ggjoy_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ggjoy/ggjoy_{{ version }}.tar.gz
   sha256: d2f778bc40203d7fbb7c81b40beed8614c36ea10448e911663cc6109aa685504
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,17 +23,19 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-ggplot2 >=2.2.0
+    - r-ggplot2
     - r-ggridges >=0.4.0
   run:
     - r-base
-    - r-ggplot2 >=2.2.0
+    - r-ggplot2
     - r-ggridges >=0.4.0
 
 test:
   commands:
-    - $R -e "library('ggjoy')"  # [not win]
+    - $R -e "library('ggjoy')"           # [not win]
     - "\"%R%\" -e \"library('ggjoy')\""  # [win]
 
 about:
@@ -47,8 +49,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
