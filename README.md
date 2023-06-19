@@ -1,11 +1,11 @@
-About r-ggjoy
-=============
+About r-ggjoy-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggjoy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/clauswilke/ggjoy
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggjoy-feedstock/blob/main/LICENSE.txt)
 
 Summary: Joyplots provide a convenient way of visualizing changes in distributions over time or space. This package enables the creation of such plots in 'ggplot2'.
 
