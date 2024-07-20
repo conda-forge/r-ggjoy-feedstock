@@ -1,6 +1,5 @@
 {% set version = '0.4.1' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ggjoy
@@ -13,8 +12,7 @@ source:
   sha256: d2f778bc40203d7fbb7c81b40beed8614c36ea10448e911663cc6109aa685504
 
 build:
-  merge_build_host: True  # [win]
-  number: 1005
+  number: 1006
   noarch: generic
   rpaths:
     - lib/R/lib/
